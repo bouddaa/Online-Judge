@@ -1,0 +1,20 @@
+{
+  "name": "onlinejudge",
+  "version": "1.0.0",
+  "description": "mean stack app",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "boda",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^1.18.4"
+  },
+  "dependencies": {
+    "express": "^4.16.4",
+    "mongoose": "^5.3.3",
+    "morgan": "^1.9.1"
+  }
+}
