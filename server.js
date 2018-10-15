@@ -1,10 +1,19 @@
-var express = require('express');
-var app = express();
-var morgan = require('morgan');
-var mongoose = require('mongoose');
+var express     = require('express');
+var app         = express();
+var morgan      = require('morgan');
+var mongoose    = require('mongoose');
+var User        = require('./app/models/user');
+var bodyParser  = require('body-parser');
+
 
 
 app.use(morgan('dev'));
+
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }));
+
+// parse application/json
+app.use(bodyParser.json());
 
 
 mongoose.connect('mongodb://localhost/my_database', function(err){
@@ -17,9 +26,22 @@ mongoose.connect('mongodb://localhost/my_database', function(err){
 });
 
 
-app.get('/', function (req, res) {
-    res.send('Hello abooo')
-  })
+app.post('/users', function (req, res) {
+    var user = new User();
+    
+    user.firstname = req.body.firstname;
+    user.lastname  = req.body.lastname;
+    user.username  = req.body.username;
+    user.password  = req.body.password;
+    user.email     = req.body.email;
+    user.save(function (err) {
+        if (err) {
+            res.send('This user already exists!');
+        } else {
+            res.send('User Created');
+        }
+      });
+  });
 
 
 
