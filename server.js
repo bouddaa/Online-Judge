@@ -34,13 +34,18 @@ app.post('/users', function (req, res) {
     user.username  = req.body.username;
     user.password  = req.body.password;
     user.email     = req.body.email;
-    user.save(function (err) {
-        if (err) {
-            res.send('This user already exists!');
-        } else {
-            res.send('User Created');
-        }
-      });
+    if (req.body.firstname == null || req.body.firstname == '' || req.body.lastname == null || req.body.lastname == '' || req.body.password == null || req.body.password == '' || req.body.email == null || req.body.email == '' ) {
+        res.send('check empty boxes');
+
+    } else {
+        user.save(function (err) {
+            if (err) {
+                res.send('This user already exists!');
+            } else {
+                res.send('User Created');
+            }
+          });
+    }
   });
 
 
