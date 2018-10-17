@@ -4,7 +4,7 @@ var morgan      = require('morgan');
 var mongoose    = require('mongoose');
 var User        = require('./app/models/user');
 var bodyParser  = require('body-parser');
-
+var path        = require('path');  
 
 
 app.use(morgan('dev'));
@@ -14,6 +14,12 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 // parse application/json
 app.use(bodyParser.json());
+
+app.use('/static', express.static('/public'));
+
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, '/public/app/views'));
+
 
 
 mongoose.connect('mongodb://localhost/my_database', function(err){
@@ -36,7 +42,6 @@ app.post('/users', function (req, res) {
     user.email     = req.body.email;
     if (req.body.firstname == null || req.body.firstname == '' || req.body.lastname == null || req.body.lastname == '' || req.body.password == null || req.body.password == '' || req.body.email == null || req.body.email == '' ) {
         res.send('check empty boxes');
-
     } else {
         user.save(function (err) {
             if (err) {
@@ -48,6 +53,9 @@ app.post('/users', function (req, res) {
     }
   });
 
+app.get('/registration', function (req, res) {
+    res.render('registration');
+});
 
 
 

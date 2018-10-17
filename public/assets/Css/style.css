@@ -1,0 +1,102 @@
+*{
+    background: wheat;
+    margin: 0 ;
+    display: block;
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow: hidden;
+}
+
+header{
+    width: 100%;
+    background: black;
+    height: 100px;
+    margin: auto;
+    color: whitesmoke;
+}
+
+header h1{
+    background: none;
+    color: whitesmoke;
+    font-family: Apple Chancery, cursive;
+    font-weight: 900;
+    text-align: center;
+    padding-top: 25px;
+}
+
+.route{
+    margin: auto;
+    background: none;
+    width: 95%;
+    font-size: 15px;
+    border-bottom: 0.5px solid;
+}
+
+.route a{
+    text-decoration: none;
+    color: black;
+}
+
+section{
+    width: 100%;  
+    resize: vertical;
+}
+
+section h1{
+    margin: 50px 200px;
+}
+
+form{
+    margin: 50px 200px;
+}
+
+form input{
+    color: black;
+    width:100%;
+    max-width: 400px;
+    border-radius: 8px;
+    border: 1px solid black;
+    font-size: 14px;
+    height: 40px;
+    background: none;
+    box-sizing: border-box;
+}
+
+form input[type="submit"]{
+    width: 200px;
+    height: 50px;
+    border: none;
+    border-radius: 8px;
+    background-color: black;
+    color: whitesmoke;
+    cursor: pointer;
+}
+
+aside{
+    height: 100%;
+    background: none;
+    position: fixed;
+    top: 200px;
+    right: 20px;
+    padding: 20px;
+    border-left: 1px dotted;
+}
+
+aside.side-bar{
+    padding-top: 0;
+    padding-right: 20px;
+    float: right;
+    width: 15%;
+}
+
+
+footer{
+    position: absolute;
+    bottom: 0;
+    font-size: 15px;
+    margin: 0 auto;
+    background: none;
+    width: 95%;
+    text-align: center;
+    padding-bottom: 10px;
+}
