@@ -1,4 +1,4 @@
-*{
+body{
     background: wheat;
     margin: 0 ;
     display: block;
@@ -67,7 +67,7 @@ form input[type="submit"]{
     height: 50px;
     border: none;
     border-radius: 8px;
-    background-color: black;
+    background-color: rgb(226, 209, 209);
     color: whitesmoke;
     cursor: pointer;
 }
@@ -90,7 +90,7 @@ aside.side-bar{
 }
 
 
-footer{
+/*footer{
     position: absolute;
     bottom: 0;
     font-size: 15px;
@@ -99,4 +99,4 @@ footer{
     width: 95%;
     text-align: center;
     padding-bottom: 10px;
-}
+}*/
