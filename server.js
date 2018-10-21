@@ -23,8 +23,8 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'public/app/views'));
 
 
-
-mongoose.connect('mongodb://localhost/my_database', function(err){
+mongoose.set('useCreateIndex', true);
+mongoose.connect('mongodb://127.0.0.1:27017/test', { useNewUrlParser: true }, function(err){
     if (err) {
         console.log('it is not connected to the database: ' + err);
     }
